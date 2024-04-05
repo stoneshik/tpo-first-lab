@@ -1,9 +1,14 @@
 package lab.first;
 
 public class Arctg {
+    private static final double HALF_PI = Math.PI / 2.0;
+
     public static double calc(double x, int n) {
-        if (Math.abs(x) > 1.0) {
-            return Math.PI / 2.0 - approximate(1 / x, n);
+        if (x < -1.0) {
+            return -HALF_PI - approximate(1 / x, n);
+        }
+        if (x > 1.0) {
+            return HALF_PI - approximate(1 / x, n);
         }
         return approximate(x, n);
     }
