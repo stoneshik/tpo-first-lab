@@ -32,11 +32,6 @@ public class LeftHeap {
         return min;
     }
 
-    public void printInOrder() {
-        orderRecursive(head);
-        System.out.println();
-    }
-
     private Node merge(Node a, Node b) {
         if (a == null) {
             return b;
@@ -64,13 +59,5 @@ public class LeftHeap {
             a.value = a.right.value + 1;
         }
         return a;
-    }
-
-    private void orderRecursive(Node r) {
-        if (r != null) {
-            orderRecursive(r.left);
-            System.out.print(r.element + " ");
-            orderRecursive(r.right);
-        }
     }
 }
