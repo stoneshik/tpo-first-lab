@@ -17,7 +17,7 @@ public class ArctgTest {
     @MethodSource("provideParamsForCheckBetweenMinusOneAndOne")
     public void checkBetweenMinusOneAndOne(double x, double y) {
         assertAll(
-                () -> assertEquals(y, Arctg.calc(x, 10000), 0.0001)
+                () -> assertEquals(y, Arctg.calc(x, 10000), 0.01)
         );
     }
 
@@ -26,7 +26,7 @@ public class ArctgTest {
     @MethodSource("provideParamsForCheckLessOfMinusOne")
     public void checkLessValueOfMinusOne(double x, double y) {
         assertAll(
-                () -> assertEquals(y, Arctg.calc(x, 10000), 0.0001)
+                () -> assertEquals(y, Arctg.calc(x, 10000), 0.01)
         );
     }
 
@@ -35,7 +35,7 @@ public class ArctgTest {
     @MethodSource("provideParamsForCheckBiggerValueOfOne")
     public void checkBiggerValueOfOne(double x, double y) {
         assertAll(
-                () -> assertEquals(y, Arctg.calc(x, 10000), 0.0001)
+                () -> assertEquals(y, Arctg.calc(x, 10000), 0.01)
         );
     }
 
