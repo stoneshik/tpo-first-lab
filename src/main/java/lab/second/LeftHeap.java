@@ -15,20 +15,20 @@ class LeftHeap {
         head = null;
     }
 
-    public void insert(int a) {
+    public void insert(double a) {
         head = merge(new Node(a), head);
     }
 
-    public int deleteMin() {
+    public double deleteMin() {
         if (isEmpty()) {
             return -1;
         }
-        int min = head.element;
+        double min = head.element;
         head = merge(head.left, head.right);
         return min;
     }
 
-    public void order() {
+    public void printInOrder() {
         orderRecursive(head);
         System.out.println();
     }
