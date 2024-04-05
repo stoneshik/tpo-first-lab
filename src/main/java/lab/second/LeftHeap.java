@@ -1,10 +1,14 @@
 package lab.second;
 
-class LeftHeap {
+public class LeftHeap {
     private Node head;
 
     public LeftHeap() {
         head = null;
+    }
+
+    public Node getHead() {
+        return head;
     }
 
     public boolean isEmpty() {
