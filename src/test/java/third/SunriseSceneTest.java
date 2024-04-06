@@ -40,6 +40,7 @@ public class SunriseSceneTest {
     }
 
     @Test
+    @DisplayName("Проверка сверкания точки на небе")
     public void checkBlinkPoint() {
         SunriseScene sunriseScene = new SunriseScene();
         sunriseScene.blinkPoint();
@@ -52,6 +53,7 @@ public class SunriseSceneTest {
     }
 
     @Test
+    @DisplayName("Проверка расползания точки на небе")
     public void checkPointStretch() {
         SunriseScene sunriseScene = new SunriseScene();
         sunriseScene.pointStretch();
@@ -64,6 +66,7 @@ public class SunriseSceneTest {
     }
 
     @Test
+    @DisplayName("Проверка появления солнц")
     public void checkSunrise() {
         SunriseScene sunriseScene = new SunriseScene();
         sunriseScene.sunrise();
