@@ -8,7 +8,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ArctgTest {
@@ -16,27 +15,21 @@ public class ArctgTest {
     @DisplayName("Проверка в диапазоне [-1; 1]")
     @MethodSource("provideParamsForCheckBetweenMinusOneAndOne")
     public void checkBetweenMinusOneAndOne(double x, double y) {
-        assertAll(
-                () -> assertEquals(y, Arctg.calc(x, 10000), 0.01)
-        );
+        assertEquals(y, Arctg.calc(x, 10000), 0.01);
     }
 
     @ParameterizedTest(name = "arctg({0}) = {1}")
     @DisplayName("Проверка если x < -1")
     @MethodSource("provideParamsForCheckLessOfMinusOne")
     public void checkLessValueOfMinusOne(double x, double y) {
-        assertAll(
-                () -> assertEquals(y, Arctg.calc(x, 10000), 0.01)
-        );
+        assertEquals(y, Arctg.calc(x, 10000), 0.01);
     }
 
     @ParameterizedTest(name = "arctg({0}) = {1}")
     @DisplayName("Проверка если x > 1")
     @MethodSource("provideParamsForCheckBiggerValueOfOne")
     public void checkBiggerValueOfOne(double x, double y) {
-        assertAll(
-                () -> assertEquals(y, Arctg.calc(x, 10000), 0.01)
-        );
+        assertEquals(y, Arctg.calc(x, 10000), 0.01);
     }
 
     private static Stream<Arguments> provideParamsForCheckBetweenMinusOneAndOne() {

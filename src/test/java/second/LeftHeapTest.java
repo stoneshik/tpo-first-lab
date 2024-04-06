@@ -17,28 +17,25 @@ public class LeftHeapTest {
         leftHeap.insert(3.0);
         leftHeap.insert(2.0);
         Node headNode = leftHeap.getHead();
+        Node leftNode = headNode.getLeft();
+        Node rightNode = headNode.getRight();
+        Node secondLeftNode = rightNode.getLeft();
         assertAll(
                 () -> assertEquals(1.0, headNode.getElement()),
                 () -> assertEquals(1.0, headNode.getValue()),
                 () -> assertNotNull(headNode.getLeft()),
-                () -> assertNotNull(headNode.getRight())
-        );
-        Node leftNode = headNode.getLeft();
-        assertAll(
+                () -> assertNotNull(headNode.getRight()),
+
                 () -> assertEquals(2.0, leftNode.getElement()),
                 () -> assertEquals(0.0, leftNode.getValue()),
                 () -> assertNull(leftNode.getLeft()),
-                () -> assertNull(leftNode.getRight())
-        );
-        Node rightNode = headNode.getRight();
-        assertAll(
+                () -> assertNull(leftNode.getRight()),
+
                 () -> assertEquals(2.0, rightNode.getElement()),
                 () -> assertEquals(0.0, rightNode.getValue()),
                 () -> assertNotNull(rightNode.getLeft()),
-                () -> assertNull(rightNode.getRight())
-        );
-        Node secondLeftNode = rightNode.getLeft();
-        assertAll(
+                () -> assertNull(rightNode.getRight()),
+
                 () -> assertEquals(3.0, secondLeftNode.getElement()),
                 () -> assertEquals(0.0, secondLeftNode.getValue()),
                 () -> assertNull(secondLeftNode.getLeft()),
@@ -68,21 +65,19 @@ public class LeftHeapTest {
         double minElement = leftHeap.deleteMin();
         assertEquals(1.0, minElement);
         Node headNode = leftHeap.getHead();
+        Node leftNode = headNode.getLeft();
+        Node secondLeftNode = leftNode.getLeft();
         assertAll(
                 () -> assertEquals(2.0, headNode.getElement()),
                 () -> assertEquals(0.0, headNode.getValue()),
                 () -> assertNotNull(headNode.getLeft()),
-                () -> assertNull(headNode.getRight())
-        );
-        Node leftNode = headNode.getLeft();
-        assertAll(
+                () -> assertNull(headNode.getRight()),
+
                 () -> assertEquals(2.0, leftNode.getElement()),
                 () -> assertEquals(0.0, leftNode.getValue()),
                 () -> assertNotNull(leftNode.getLeft()),
-                () -> assertNull(leftNode.getRight())
-        );
-        Node secondLeftNode = leftNode.getLeft();
-        assertAll(
+                () -> assertNull(leftNode.getRight()),
+
                 () -> assertEquals(3.0, secondLeftNode.getElement()),
                 () -> assertEquals(0.0, secondLeftNode.getValue()),
                 () -> assertNull(secondLeftNode.getLeft()),
